@@ -1,0 +1,8 @@
+for /f "delims=" %%i in ('dir /b /s /a-d *.gif') do (call :gifExtract %%i)
+pause
+exit /b 0
+
+rem Use param %1 as gif file name, %~n1 remove suffix
+:gifExtract
+mkdir %~n1
+gifExtract\bin\Release\gifExtract.exe %1 %~n1
